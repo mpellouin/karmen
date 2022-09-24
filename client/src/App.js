@@ -5,6 +5,7 @@ import Card from './components/card';
 
 const App = () => {
   const [pokemons, setPokemons] = useState([]);
+  const [selectedPokemon, setSelectedPokemon] = useState(null);
 
   useEffect(() => {
     getPokemonData().then((data) => {
@@ -17,7 +18,7 @@ const App = () => {
     <div className="App">
       <div className="pokemonList">
         {pokemons.map((pokemon) => (
-          <Card key={pokemon.id} name={pokemon.name} image={pokemon.image} id={pokemon.id} />
+          <Card key={pokemon.id} name={pokemon.name} image={pokemon.image} id={pokemon.id} isSelected={selectedPokemon === pokemon.id} setSelected={setSelectedPokemon}/>
         ))}
       </div>
     </div>
