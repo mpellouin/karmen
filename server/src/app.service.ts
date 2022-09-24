@@ -20,9 +20,9 @@ export class AppService {
     return list;
   }
 
-  getPokemonsFromVersion(version: number): Promise<Pokemon[]> {
+  getPokemonsFromVersion(): Promise<Pokemon[]> {
     const list = this.httpService
-      .get(`https://pokeapi.co/api/v2/generation/${version}`).toPromise().then((response) => {
+      .get(`https://pokeapi.co/api/v2/generation/1`).toPromise().then((response) => {
         return response.data.pokemon_species;
       }).catch((e) => {
         throw new HttpException(e.response.data, e.response.status);
@@ -40,8 +40,8 @@ export class AppService {
     return list;
   }
 
-  async getPokemons(id: number): Promise<PokeCard[]> {
-    const pokemons = await this.getPokemonsFromVersion(id);
+  async getPokemons(): Promise<PokeCard[]> {
+    const pokemons = await this.getPokemonsFromVersion();
     const pokeCards: PokeCard[] = [];
     for (const pokemon of pokemons) {
       const pokemonData = this.getPokemonData(pokemon.url);

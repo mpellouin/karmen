@@ -12,9 +12,9 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get('pokemons/:id')
-  async getPokemons(@Param('id') id: number): Promise<PokeCard[]> {
-    const pokes = await this.appService.getPokemons(id);
+  @Get('pokemons')
+  async getPokemons(): Promise<PokeCard[]> {
+    const pokes = await this.appService.getPokemons();
     return pokes;
   }
 
