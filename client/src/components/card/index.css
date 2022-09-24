@@ -10,6 +10,7 @@
     flex-direction: row;
     user-select: none;
     cursor: pointer;
+    justify-content: space-between;
 }
 
 .pokeCard:hover {

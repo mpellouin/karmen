@@ -1,0 +1,38 @@
+.header {
+    border-bottom: 1px solid red;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+    height: 60px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    background-color: #ee3535;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+
+}
+
+.navbarScrolled {
+    transition: all 0.2s ease-in-out;
+    transform: translateY(-10px);
+}
+
+.logo {
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.logoScrolled {
+    transition: all 0.2s ease-in-out;
+    transform: scale(0.8) translateY(5px);
+}
+
+
+.logo img {
+    width: 200px;
+    z-index: 100000;
+}
