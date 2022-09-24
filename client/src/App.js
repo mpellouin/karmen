@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getPokemonData } from './ApiFunctions/pokemonUtils';
 import './App.css';
-import Card from './components/card';
+import Card from './components/Card';
 import Header from './components/Header';
 
 const App = () => {
