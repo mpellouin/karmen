@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import './index.css';
 
 const SearchBar = ({setSelected}) => {
@@ -9,6 +9,20 @@ const SearchBar = ({setSelected}) => {
             return null;
         return searchTerm;
     }
+
+    const submitSearch = useCallback((e) => {
+        if (searchTerm <= 0 || searchTerm >= 152 || searchTerm === null)
+            return;
+        if (e.keyCode === 13)
+            setSelected(searchTerm)    
+    }, [searchTerm, setSelected]);
+
+    useEffect(() => {
+        document.addEventListener('keyup', submitSearch);
+        return () => {
+            document.removeEventListener('keyup', submitSearch);
+        }
+    }, [submitSearch])
 
     return (
     <div className="searchBarContainer">

@@ -13,19 +13,20 @@
 .closeButton {
     position: absolute;
     top: 60px;
-    right: 20px;
-    background-color: transparent;
+    right: 0px;
+    background-color: rgba(0, 0, 0, .1);
     border: none;
     color: white;
     font-size: 1.5rem;
     cursor: pointer;
     padding: 6px;
+    width: 48px;
+    height: 48px;
 }
 
 .closeButton:hover {
     background-color: rgba(0, 0, 0, 0.2);
     border: 0px transparent solid;
-    border-radius: 10px;
 }
 
 .pokeName {
@@ -44,7 +45,6 @@
     padding: 0;
 }
 
-/* stylize .statsTable */
 .statsTable {
     color: #000;
     border-spacing: 1px; 
@@ -74,8 +74,6 @@ tbody tr
 {
     height:48px; border-bottom:1px solid #E3F1D5;
 }
-
-/* pokeId top left corner */
 
 .pokeId {
     position: absolute;

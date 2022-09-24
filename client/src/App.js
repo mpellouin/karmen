@@ -20,13 +20,13 @@ const App = () => {
   return (
     <div className="App">
       <Header />
+      <SearchBar setSelected={setSelectedPokemon}/>
       {selectedPokemon && (
         <PokeInfos
           isSelected={selectedPokemon}
           setSelected={setSelectedPokemon}
         />
       )}
-      <SearchBar setSelected={setSelectedPokemon}/>
       <div className="pokemonList">
         {!selectedPokemon &&
           pokemons.map((pokemon) => (
