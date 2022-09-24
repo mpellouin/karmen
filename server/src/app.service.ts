@@ -22,18 +22,8 @@ export class AppService {
 
   getPokemonsFromVersion(): Promise<Pokemon[]> {
     const list = this.httpService
-      .get(`https://pokeapi.co/api/v2/generation/1`).toPromise().then((response) => {
-        return response.data.pokemon_species;
-      }).catch((e) => {
-        throw new HttpException(e.response.data, e.response.status);
-      });
-    return list;
-  }
-
-  getPokemonData(pokemonUrl: string): Promise<Pokemon> {
-    const list = this.httpService
-      .get(pokemonUrl).toPromise().then((response) => {
-        return response.data;
+      .get(`https://pokeapi.co/api/v2/pokemon?limit=151`).toPromise().then((response) => {
+        return response.data.results;
       }).catch((e) => {
         throw new HttpException(e.response.data, e.response.status);
       });
@@ -43,15 +33,15 @@ export class AppService {
   async getPokemons(): Promise<PokeCard[]> {
     const pokemons = await this.getPokemonsFromVersion();
     const pokeCards: PokeCard[] = [];
+    let i = 1;
     for (const pokemon of pokemons) {
-      const pokemonData = this.getPokemonData(pokemon.url);
       const pokeCard = {
-        id: (await pokemonData).id,
-        name: (await pokemonData).name,
-        image: "test",
-        types: ["test"],
+        id: i,
+        name: pokemon.name,
+        image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png`,
       };
       pokeCards.push(pokeCard);
+      i++;
     }
     return pokeCards;
   }
