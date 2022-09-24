@@ -3,6 +3,7 @@ import { getPokemonData } from './ApiFunctions/pokemonUtils';
 import './App.css';
 import Card from './components/Card';
 import Header from './components/Header';
+import PokeInfos from './components/PokeInfos';
 
 const App = () => {
   const [pokemons, setPokemons] = useState([]);
@@ -18,8 +19,9 @@ const App = () => {
   return (
     <div className="App">
       <Header />
+      {selectedPokemon && <PokeInfos isSelected={selectedPokemon} setSelected={setSelectedPokemon} />}
       <div className="pokemonList">
-        {pokemons.map((pokemon) => (
+        {!selectedPokemon && pokemons.map((pokemon) => (
           <Card key={pokemon.id} name={pokemon.name} image={pokemon.image} id={pokemon.id} isSelected={selectedPokemon === pokemon.id} setSelected={setSelectedPokemon}/>
         ))}
       </div>

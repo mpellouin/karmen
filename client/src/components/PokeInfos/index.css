@@ -1,0 +1,89 @@
+.pokeInfos {
+    margin-top: 60px;
+    width: 100%;
+    height: 100%;
+    bottom: 0px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.closeButton {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.closeButton:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 0px transparent solid;
+    border-radius: 10px;
+}
+
+.pokeName {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.pokeTypes {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* stylize .statsTable */
+.statsTable {
+    color: #000;
+    border-spacing: 1px; 
+    border-collapse: collapse; 
+    background:white;
+    border-radius:6px;
+    overflow:hidden;
+    max-width:800px; 
+    width: 50%;
+    margin:0 auto;
+    position:relative;
+    text-align: inherit;
+}
+
+thead tr        { 
+    height: 60px;
+    background: #FFCB05;
+    font-size: 16px;
+  }
+
+.pokeSprite {
+    width: 200px;
+    height: 200px;
+}
+
+tbody tr
+{
+    height:48px; border-bottom:1px solid #E3F1D5;
+}
+
+/* pokeId top left corner */
+
+.pokeId {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    background-color: rgba(0, 0, 0, .1);
+    color: white;
+    padding: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
